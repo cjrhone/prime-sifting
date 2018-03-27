@@ -18,10 +18,7 @@ function removeDivisible(){
 
 
 $(document).ready(function() {
-  // for(var x=2; x<=start; x++){
-  //   testArray.push(x);
-  // }
-  // console.log(testArray);
+
 
   $("form#primeForm").submit(function(event) {
 
@@ -33,18 +30,12 @@ $(document).ready(function() {
        testArray.push(x);
     }
 
-    
+    do{
       prime = testArray[1];
       finalPrimes.push(prime);
       removeDivisible();
+    } while (prime);
 
-
-      // prime = testArray[1];
-      // finalPrimes.push(prime);
-      // removeDivisible();
-      // prime = testArray[1];
-      // finalPrimes.push(prime);
-      // removeDivisible();
 
       alert(finalPrimes);
 
