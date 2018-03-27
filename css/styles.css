@@ -1,0 +1,9 @@
+.result {
+  display: none;
+  color: red;
+  font-family: fantasy;
+  font-size: 30px;
+  padding-right: 20px;
+  padding-top: 10px;
+
+}
