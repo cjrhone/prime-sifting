@@ -1,11 +1,19 @@
-var input;
+
 var testArray=[1];
-var start=0;
+var limit=0;
 var prime=2;
 var finalPrimes=[1];
 var index=0;
 var primeLoc=0;
 
+function resetVariables(){
+  var testArray=[1];
+  var limit=0;
+  var prime=2;
+  var finalPrimes=[1];
+  var index=0;
+  var primeLoc=0;
+}
 
 function removeDivisible(){
   testArray.forEach(function(element){
@@ -19,14 +27,16 @@ function removeDivisible(){
 
 $(document).ready(function() {
 
-
+  //$("").text("");
   $("form#primeForm").submit(function(event) {
 
-    var start = parseInt($("#inputBox").val());
+    resetVariables();//resets variables so that function doesn't double append
+    console.log(finalPrimes);
+    //gets userInput for limit number
+    var limit = parseInt($("#inputBox").val());
 
-
-
-    for(var x=2; x<=start; x++){
+    //build array that includes all numbers from 1 up to user inputted number
+    for(var x=2; x<=limit; x++){
        testArray.push(x);
     }
 
@@ -34,15 +44,10 @@ $(document).ready(function() {
       prime = testArray[1];
       finalPrimes.push(prime);
       removeDivisible();
-    } while (prime);
+    } while (prime); //loop while numbers exist in the test array (not including 1)
+    finalPrimes.pop();//removes extra element
 
-
-      alert(finalPrimes);
-
-
-
-
-    console.log(testArray);
+    $(".result").append("<li>"+finalPrimes+ "</li>");
 
     event.preventDefault();
 
